@@ -1,0 +1,125 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+
+<BlogPost
+  title="A Nigerian Bank Just Lost 3TB of Customer Data. Here Is How to Make Sure Your Business Is Not Next."
+  description="Sterling Bank and Remita lost 3 terabytes of customer data to a single attacker in April 2026. The attack used basic, well-known weaknesses. Here is the plain-English playbook every Nigerian business owner needs in the next 30 days."
+  date="2026-04-18"
+  category="Security"
+  readingTime="8 min read"
+>
+
+<p>In the last two weeks, one of Nigeria's largest banks quietly had 3 terabytes of customer data stolen. Included in that haul: over 800 gigabytes of Know Your Customer documents - passports, driver's licenses, national ID cards, utility bills - belonging to roughly 900,000 Sterling Bank customers. The attacker then used credentials they found inside Sterling Bank's systems to walk into Remita, the payment platform that handles Nigerian government salaries, and take data from there too.</p>
+
+<p>Most of the affected customers still do not know it happened.</p>
+
+<p>The attacker was not a nation-state. They did not use a zero-day exploit. They used a <strong>publicly-known vulnerability that Sterling Bank had left unpatched for three months</strong> on an internet-facing testing server. The attack took nine days. The Nigeria Data Protection Commission opened an investigation on April 1, 2026.</p>
+
+<p>If you are a Nigerian business owner reading this, there is one thing you should understand: <strong>the same mistakes that put Sterling Bank on the attack path exist in most Nigerian businesses right now</strong>. Bigger companies, smaller companies, fintechs, hospitals, e-commerce shops - we have scanned 20 major Nigerian organizations in the last 30 days and 64% of their live websites are missing security controls that have been industry standard for over a decade.</p>
+
+<p>This post is not a technical deep-dive. It is a plain-English business-owner's guide to what went wrong at Sterling Bank, why your business might be exposed to the same class of attack, and what you can do about it in the next 30 days - before the NDPC, the press, or an attacker comes knocking.</p>
+
+<div style="width: 60px; height: 3px; background: linear-gradient(90deg, #4ECDC4, transparent); margin: 48px 0 40px; border-radius: 2px;"></div>
+
+<h2>What Happened at Sterling Bank in One Paragraph</h2>
+
+<p>An attacker found a forgotten testing server on Sterling Bank's network. The server was connected to the public internet. It was running software that had a known flaw. Sterling Bank's IT team had not applied the fix for three months. The attacker sent one request and got in. Once inside, they found a folder of code that contained passwords - written in plain text, in a file anyone with access could read. Those passwords were for Remita, a third-party payment system Sterling Bank integrates with. The attacker used those passwords to walk into Remita. From there, they found a cloud storage bucket that was misconfigured, pulled 3 terabytes of customer data, and left. Sterling Bank noticed later, negotiated with the attacker for weeks, and said nothing to customers.</p>
+
+<p>Every single step in that chain is a well-known class of mistake with a standard fix. None of it required any special attacker capability. None of it required sophisticated tooling. A competent IT team with basic security processes catches every stage.</p>
+
+<h2>Why This Matters to Your Business (Even If You Are Not a Bank)</h2>
+
+<p>You might read the above and think: "I am a small business, I do not have the kind of data Sterling Bank has, this does not apply to me."</p>
+
+<p>It applies to you. Here is why:</p>
+
+<h3>Attackers do not care how big you are</h3>
+
+<p>An automated bot scanning the Nigerian internet for unpatched servers does not know if you are Sterling Bank or a small fintech with 500 customers. It finds the open door and tries the door. If your small business is storing <strong>any</strong> personal data - customer names, phone numbers, national ID numbers, bank account details - you have something worth stealing, and a breach is a breach under the NDPA regardless of how many records you lost.</p>
+
+<h3>The fines do not scale down for small businesses</h3>
+
+<p>The Nigeria Data Protection Act 2023 gives the NDPC power to fine businesses <strong>up to 2% of annual revenue</strong> for serious data protection failures. For a small business, that can be the difference between staying open and closing down. And unlike the criminal case where the burden of proof is on the prosecution, NDPA enforcement is administrative - the NDPC decides the fine based on their investigation, and you argue against it afterward.</p>
+
+<h3>Your customers will find out from the news, not from you</h3>
+
+<p>Sterling Bank did not tell its 900,000 affected customers. It negotiated privately with the attacker and tried to pay for silence. The story came out anyway, through independent reporting. Now Sterling Bank looks worse than if they had issued a straightforward breach notification on day one - they look both exposed AND dishonest.</p>
+
+<p>A small business that loses customer trust in Nigeria's word-of-mouth economy can lose 30 to 50 percent of its active customers in weeks. The breach itself might be survivable. The loss of trust often is not.</p>
+
+<h3>The NDPC enforcement wave is moving sector by sector</h3>
+
+<p>The NDPC has been working through sectors in a predictable order: first banks and large fintechs (2024), then education and payments processors (2025), now telecoms are in the spotlight with the new 48-hour reporting rule. <strong>Healthcare, e-commerce, and small-to-mid fintechs are next</strong>. If your business is in any of those categories, the question is not whether the NDPC will eventually look at you - it is whether you will be ready when they do.</p>
+
+<h2>The Six Warning Signs Your Business Is Sterling-Class Vulnerable</h2>
+
+<p>Here is the pattern we see across every Nigerian business that has been breached in the last 12 months. <strong>If three or more of these apply to your business, you are operating at the same risk level as Sterling Bank was on March 17, 2026</strong>.</p>
+
+<h3>1. You have old websites, subdomains, or internal tools that nobody is actively maintaining</h3>
+
+<p>Does your business have a subdomain you set up two years ago for a campaign that never launched? An old admin panel from a CMS you no longer use? A staging site that was never taken down? Every one of these is a potential entry point. Sterling Bank's breach started on exactly this kind of forgotten server.</p>
+
+<h3>2. Your website does not have basic security headers</h3>
+
+<p>This is a technical detail, but the fix takes an hour and costs nothing. The most important is called HSTS (HTTP Strict Transport Security), and it prevents attackers on public Wi-Fi from hijacking your customers' sessions. Our scans show 64 percent of Nigerian business websites do not have this configured. If yours is one of them, your customers are exposed every time they log in from a cafe, an airport, or their office guest network.</p>
+
+<h3>3. Your developers or contractors have put passwords in code</h3>
+
+<p>If your website, app, or backend was built by freelancers, in-house devs, or a small agency, there is a real chance that somewhere in your code repository, a password or API key is sitting in plain text. We find these in Nigerian businesses every week. In the Sterling Bank case, this is literally how the attacker got into Remita - passwords stored in plain text inside a code folder.</p>
+
+<h3>4. You use third-party services (Paystack, Flutterwave, Sendchamp, Mailgun, etc.) but you are not sure where the credentials for those services are stored</h3>
+
+<p>Every integration you use has a secret key. That key, if stolen, lets an attacker impersonate your business to that service. Where are those keys right now? In an environment variable on your server? In a shared Google Doc? Committed to your GitHub? If the answer to any of those is "I'm not sure," you are exposed.</p>
+
+<h3>5. You have no process for responding to a breach</h3>
+
+<p>Under the NDPA, you have 72 hours to notify the NDPC once you become aware of a breach. That is not a lot of time to invent a process under pressure. Who on your team gets called first? Who writes the notification letter? Who tells your customers? If you do not have written answers to those questions, you are in the same position Sterling Bank was - which is why they simply stayed silent.</p>
+
+<h3>6. You have never had anyone look at your business from the outside attacker's perspective</h3>
+
+<p>Every one of the risks above can be found by an outside review. The tools exist. The methods are well-documented. The only thing missing is someone whose job is to look. Most Nigerian businesses do not have this person on staff. Most do not engage a third party to do it periodically either. And the cost of a single external assessment is a small fraction of the fine from even a minor NDPA violation.</p>
+
+<h2>What to Do in the Next 30 Days</h2>
+
+<h3>Week 1: Know what you own</h3>
+
+<p>Write down every domain and subdomain your business controls. Every website. Every app. Every internal tool that is accessible from the internet. If you cannot list them from memory, that alone is a problem - it means you cannot be monitoring them.</p>
+
+<p>For each item on the list, ask: who is responsible for keeping this up to date? If the answer is "nobody" or "I'm not sure," either assign someone or take it offline.</p>
+
+<h3>Week 2: Lock the doors that are easiest to lock</h3>
+
+<p>Add HSTS and basic security headers to every website your business owns. A Pejji engineer can do this in one afternoon for a typical small business website. Cost: one engineer-day. Value: closes the biggest single exposure on 64 percent of Nigerian business sites.</p>
+
+<p>Rotate any passwords or API keys that have ever been committed to a code repository. If you are not sure, assume they have been. Rotation is free and takes minutes per credential.</p>
+
+<h3>Week 3: Write your breach response plan</h3>
+
+<p>One page. Three sections. (1) Who gets called in the first hour. (2) A draft NDPC notification letter you can fill in the blanks of. (3) A draft customer email. Put it in a shared folder everyone on your leadership team can access. The 72-hour clock starts the moment you become aware - you cannot afford to spend 60 of those hours deciding what to say.</p>
+
+<h3>Week 4: Get an outside set of eyes</h3>
+
+<p>Have a third party scan your business the way an attacker would. Pejji can do this as part of our security and NDPA compliance engagement. It is not a penetration test - it is a non-invasive external assessment that identifies the Sterling-class weaknesses before an attacker does. The report lists what we found, prioritized by risk, with remediation guidance for each item. Most engagements take one week to deliver.</p>
+
+<h2>Where Pejji Fits</h2>
+
+<p>Pejji builds websites and helps Nigerian businesses comply with NDPA. Security is part of both. Every website we build ships with modern security headers, proper SSL/TLS configuration, and a privacy policy that meets NDPA requirements. Every website we maintain gets ongoing monitoring.</p>
+
+<p>For existing Nigerian businesses that did not build their site with us, we offer a one-time security and NDPA compliance review. We scan your website the same way an attacker would, produce a prioritized findings list, and either fix the findings ourselves (if you want our retainer) or hand the list to your existing developer (if you want a one-shot engagement). Pricing starts at ₦150,000 for small business sites and scales with complexity.</p>
+
+<p>For fintech, healthcare, and e-commerce businesses in the NDPC enforcement-cascade spotlight, we are also offering a limited number of pre-emptive reviews at a discounted rate in exchange for being allowed to use the engagement as a case study (anonymized). If that describes your business and you would like to be in that batch, reach out via our <a href="/contact" style="color: #4ECDC4; text-decoration: none;">contact form</a> or WhatsApp +234 904 452 6924.</p>
+
+<div style="width: 60px; height: 3px; background: linear-gradient(90deg, #4ECDC4, transparent); margin: 48px 0 40px; border-radius: 2px;"></div>
+
+<h2>The Bottom Line</h2>
+
+<p>The Sterling Bank breach is not an outlier. It is what happens when a business with basic gaps in its infrastructure meets an attacker with a public CVE scanner. The same gaps exist in most Nigerian businesses right now. The fixes are well-known. The cost of fixing is always lower than the cost of being breached.</p>
+
+<p>You have time. You have the information. The choice is whether to be the business that ran the scan and closed the gaps before the NDPC visit, or the business that is written about in the next article like this one.</p>
+
+<p>We are betting most Nigerian business owners reading this will choose the first option.</p>
+
+<p>If you want help getting there, <a href="/contact" style="color: #4ECDC4; text-decoration: none;">get in touch</a>.</p>
+
+</BlogPost>
