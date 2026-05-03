@@ -132,16 +132,16 @@ import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../config';
           <h2 class="text-2xl sm:text-3xl font-bold mb-8">What's your budget range?</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <button class="quiz-option card-tactile bg-surface border border-white/5 rounded-2xl p-6 text-left hover:border-teal/30 transition-all" data-q="q5" data-value="under80k">
-              <span class="text-light font-medium">Under ₦80K</span>
+              <span class="text-light font-medium">Under ₦80K <span class="text-xs text-subtle">(≈ $53 USD)</span></span>
             </button>
             <button class="quiz-option card-tactile bg-surface border border-white/5 rounded-2xl p-6 text-left hover:border-teal/30 transition-all" data-q="q5" data-value="80k-200k">
-              <span class="text-light font-medium">₦80K – ₦200K</span>
+              <span class="text-light font-medium">₦80K – ₦200K <span class="text-xs text-subtle">(≈ $53 – $133 USD)</span></span>
             </button>
             <button class="quiz-option card-tactile bg-surface border border-white/5 rounded-2xl p-6 text-left hover:border-teal/30 transition-all" data-q="q5" data-value="200k-400k">
-              <span class="text-light font-medium">₦200K – ₦400K</span>
+              <span class="text-light font-medium">₦200K – ₦400K <span class="text-xs text-subtle">(≈ $133 – $267 USD)</span></span>
             </button>
             <button class="quiz-option card-tactile bg-surface border border-white/5 rounded-2xl p-6 text-left hover:border-teal/30 transition-all" data-q="q5" data-value="400k+">
-              <span class="text-light font-medium">₦400K+</span>
+              <span class="text-light font-medium">₦400K+ <span class="text-xs text-subtle">(≈ $267+ USD)</span></span>
             </button>
             <button class="quiz-option card-tactile bg-surface border border-white/5 rounded-2xl p-6 text-left hover:border-teal/30 transition-all" data-q="q5" data-value="unsure">
               <span class="text-light font-medium">Not sure yet</span>
@@ -215,7 +215,7 @@ import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../config';
     const tiers: Record<string, { name: string; price: string; features: string[]; slug: string }> = {
       card: {
         name: "Card",
-        price: "₦60,000",
+        price: "₦60,000 (≈ $40 USD)",
         slug: "card",
         features: [
           "Single page digital business card",
@@ -228,7 +228,7 @@ import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../config';
       },
       starter: {
         name: "Starter",
-        price: "₦150K",
+        price: "₦150K (≈ $100 USD)",
         slug: "starter",
         features: [
           "Multi-section landing page",
@@ -241,7 +241,7 @@ import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../config';
       },
       growth: {
         name: "Growth",
-        price: "₦300K",
+        price: "₦300K (≈ $200 USD)",
         slug: "growth",
         features: [
           "Multi-page website (up to 5 pages)",
@@ -254,7 +254,7 @@ import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../config';
       },
       pro: {
         name: "Pro",
-        price: "₦800K+",
+        price: "₦800K+ (≈ $533+ USD)",
         slug: "pro",
         features: [
           "Full ecommerce store",

@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { WHATSAPP_URL } from '../config';
 ---
 
-<Base title="Services & Pricing | Pejji" description="No hidden fees. No surprises. Pick your tier, we handle the rest. Starting from ₦60,000.">
+<Base title="Services & Pricing | Pejji" description="No hidden fees. No surprises. Pick your tier, we handle the rest. Starting from ₦60,000 (≈ $40 USD).">
 
   <!-- HEADER -->
   <section class="py-16 sm:py-24">
@@ -22,10 +22,11 @@ import { WHATSAPP_URL } from '../config';
         <div class="md:col-span-2 card-tactile bg-surface rounded-2xl p-8 relative hover:shadow-lg hover:shadow-purple-500/10" style="border: 2px solid transparent; background-image: linear-gradient(var(--color-surface), var(--color-surface)), linear-gradient(135deg, #0A8F8F, #A855F7, #F57A1F); background-origin: border-box; background-clip: padding-box, border-box;">
           <div class="absolute -top-3 right-6 text-xs font-semibold px-3 py-1 rounded-full animate-pulse" style="background:linear-gradient(135deg,#7C3AED,#F57A1F);color:#FFFFFF;box-shadow:0 0 12px rgba(124,58,237,0.5),0 0 24px rgba(124,58,237,0.2);">AI-POWERED</div>
           <div class="text-purple-400 text-sm font-semibold uppercase tracking-wider">Pro Max</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold bg-gradient-to-r from-teal to-purple-400 bg-clip-text text-transparent">₦1.5M+</span>
+            <span class="text-sm text-subtle">≈ $1,000+ USD</span>
           </div>
-          <p class="text-subtle text-sm mt-2">+ ₦150,000/mo hosting & agent</p>
+          <p class="text-subtle text-sm mt-2">+ ₦150,000/mo (≈ $100 USD/mo) hosting & agent</p>
           <p class="text-subtle mt-4">21-30 day delivery &middot; Unlimited revisions</p>
           <ul class="mt-6 space-y-3">
             {[
@@ -50,10 +51,11 @@ import { WHATSAPP_URL } from '../config';
         <!-- Card Tier -->
         <div class="card-tactile bg-surface border border-white/5 rounded-2xl p-8 hover:border-teal/20" style="border-top: 3px solid #0A8F8F;">
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#0A8F8F;">Card</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦60,000</span>
+            <span class="text-sm text-subtle">≈ $40 USD</span>
           </div>
-          <p class="text-subtle text-sm mt-2">+ ₦10,000/mo hosting & support</p>
+          <p class="text-subtle text-sm mt-2">+ ₦10,000/mo (≈ $7 USD/mo) hosting & support</p>
           <p class="text-subtle mt-4">48-hour delivery &middot; 1 revision round</p>
           <ul class="mt-6 space-y-3">
             {[
@@ -77,10 +79,11 @@ import { WHATSAPP_URL } from '../config';
         <!-- Starter -->
         <div class="card-tactile bg-surface border border-white/5 rounded-2xl p-8 hover:border-blue-500/20" style="border-top: 3px solid #3B82F6;">
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#3B82F6;">Starter</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦150K</span>
+            <span class="text-sm text-subtle">≈ $100 USD</span>
           </div>
-          <p class="text-subtle text-sm mt-2">+ ₦15,000/mo hosting & support</p>
+          <p class="text-subtle text-sm mt-2">+ ₦15,000/mo (≈ $10 USD/mo) hosting & support</p>
           <p class="text-subtle mt-4">5-7 day delivery &middot; 2 revision rounds</p>
           <ul class="mt-6 space-y-3">
             {[
@@ -105,10 +108,11 @@ import { WHATSAPP_URL } from '../config';
         <div class="card-tactile bg-surface rounded-2xl p-8 relative hover:shadow-lg" style="border: 2px solid rgba(245,122,31,0.5); border-top: 3px solid #F57A1F; --tw-shadow-color: rgba(245,122,31,0.1);">
           <div class="absolute -top-3 right-6 text-white text-xs font-semibold px-3 py-1 rounded-full" style="background:#F57A1F;">Most Popular</div>
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#F57A1F;">Growth</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦300K</span>
+            <span class="text-sm text-subtle">≈ $200 USD</span>
           </div>
-          <p class="text-subtle text-sm mt-2">+ ₦20,000/mo hosting & support</p>
+          <p class="text-subtle text-sm mt-2">+ ₦20,000/mo (≈ $13 USD/mo) hosting & support</p>
           <p class="text-subtle mt-4">7-14 day delivery &middot; 3 revision rounds</p>
           <ul class="mt-6 space-y-3">
             {[
@@ -132,10 +136,11 @@ import { WHATSAPP_URL } from '../config';
         <!-- Pro -->
         <div class="card-tactile bg-surface border border-white/5 rounded-2xl p-8 hover:border-emerald-500/20" style="border-top: 3px solid #10B981;">
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#10B981;">Pro</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦800K+</span>
+            <span class="text-sm text-subtle">≈ $533+ USD</span>
           </div>
-          <p class="text-subtle text-sm mt-2">+ ₦30,000/mo hosting & support</p>
+          <p class="text-subtle text-sm mt-2">+ ₦30,000/mo (≈ $20 USD/mo) hosting & support</p>
           <p class="text-subtle mt-4">14-21 day delivery &middot; 3 revision rounds</p>
           <ul class="mt-6 space-y-3">
             {[
@@ -204,8 +209,9 @@ import { WHATSAPP_URL } from '../config';
         <!-- Website Security Audit -->
         <div class="card-tactile bg-surface border border-white/5 rounded-2xl p-8 hover:border-teal/20" style="border-top: 3px solid #4ECDC4;">
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#4ECDC4;">Website Security Audit</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦50,000</span>
+            <span class="text-sm text-subtle">≈ $33 USD</span>
           </div>
           <p class="text-subtle mt-4">3-5 day turnaround</p>
           <ul class="mt-6 space-y-3">
@@ -230,8 +236,9 @@ import { WHATSAPP_URL } from '../config';
         <!-- Performance Optimization -->
         <div class="card-tactile bg-surface border border-white/5 rounded-2xl p-8 hover:border-blue-500/20" style="border-top: 3px solid #3B82F6;">
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#3B82F6;">Performance Optimization</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦80,000</span>
+            <span class="text-sm text-subtle">≈ $53 USD</span>
           </div>
           <p class="text-subtle mt-4">5-7 day turnaround</p>
           <ul class="mt-6 space-y-3">
@@ -257,8 +264,9 @@ import { WHATSAPP_URL } from '../config';
         <div class="card-tactile bg-surface rounded-2xl p-8 relative hover:shadow-lg" style="border: 2px solid rgba(245,122,31,0.5); border-top: 3px solid #F57A1F; --tw-shadow-color: rgba(245,122,31,0.1);">
           <div class="absolute -top-3 right-6 text-white text-xs font-semibold px-3 py-1 rounded-full" style="background:#F57A1F;">Recommended</div>
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#F57A1F;">Security Hardening</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦100,000</span>
+            <span class="text-sm text-subtle">≈ $66 USD</span>
           </div>
           <p class="text-subtle mt-4">7-10 day turnaround</p>
           <ul class="mt-6 space-y-3">
@@ -283,8 +291,9 @@ import { WHATSAPP_URL } from '../config';
         <!-- CMS Migration -->
         <div class="card-tactile bg-surface border border-white/5 rounded-2xl p-8 hover:border-emerald-500/20" style="border-top: 3px solid #10B981;">
           <div class="text-sm font-semibold uppercase tracking-wider" style="color:#10B981;">CMS Migration</div>
-          <div class="mt-4 flex items-baseline gap-2">
+          <div class="mt-4 flex items-baseline gap-2 flex-wrap">
             <span class="text-4xl font-bold">₦200K+</span>
+            <span class="text-sm text-subtle">≈ $133+ USD</span>
           </div>
           <p class="text-subtle mt-4">14-21 day turnaround</p>
           <ul class="mt-6 space-y-3">
