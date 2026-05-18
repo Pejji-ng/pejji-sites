@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+
+const lastReviewed = '2026-05-18';
+---
+
+<Base title="Data Protection Impact Assessment | Pejji" description="DPIA summary - NDPA + GAID compliance disclosure for Pejji's AI-assisted website + business operations service.">
+
+  <section class="py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-teal text-sm uppercase tracking-wider mb-2 reveal">Compliance</p>
+      <h1 class="text-4xl sm:text-5xl font-bold reveal" style="transition-delay: 50ms;">Data Protection Impact Assessment</h1>
+      <p class="mt-4 text-subtle text-sm reveal" style="transition-delay: 100ms;">Public summary - last reviewed {lastReviewed}. Full DPIA available on request to <a href="mailto:privacy@pejji.com" class="text-teal hover:underline">privacy@pejji.com</a>.</p>
+
+      <div class="mt-12 space-y-10 text-subtle leading-relaxed reveal" style="transition-delay: 200ms;">
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Purpose of Processing</h2>
+          <p>Pejji is a professional website + business operations service for Nigerian businesses. We use AI to onboard customers via WhatsApp in 5 minutes, render their business website, and operate ongoing customer-facing communications on their behalf.</p>
+          <p class="mt-3">We process personal data for three concrete purposes: (1) to onboard the business owner and configure their site; (2) to render the public-facing website that serves the business's customers; (3) to maintain customer-support communications between the business owner and Pejji's service team.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Categories of Data Subjects</h2>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Pejji subscribers</strong> -business owners onboarding their business with us</li>
+            <li><strong class="text-light">Site visitors</strong> -members of the public visiting Pejji-built websites (limited to anonymous request metadata + opt-in contact form submissions)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Categories of Personal Data</h2>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Identification + contact</strong> -business name, location, business owner phone number, business operating hours</li>
+            <li><strong class="text-light">Content</strong> -product descriptions, product photos, voice notes (transcribed to text)</li>
+            <li><strong class="text-light">Service interaction</strong> -WhatsApp message history between subscriber and Pejji service team</li>
+            <li><strong class="text-light">Payment metadata</strong> -Paystack-issued subscription IDs and payment timestamps (NO card numbers; Paystack handles those)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Recipients</h2>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Cloudflare</strong> -CDN + hosting + WAF infrastructure</li>
+            <li><strong class="text-light">Paystack (Nigeria)</strong> -subscription billing + payment processing</li>
+            <li><strong class="text-light">Meta Platforms (via WhatsApp Cloud API)</strong> -WhatsApp message delivery</li>
+            <li><strong class="text-light">Anthropic (United States)</strong> -AI processing for conversational onboarding, site copy generation, and voice transcription</li>
+            <li><strong class="text-light">Pejji operator</strong> (Kingsley Olukanni / BlessedOps Group) -service supervision + escalation handling</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Third-Country Transfers</h2>
+          <p>Two recipients process data outside Nigeria:</p>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Anthropic (United States)</strong> -AI inference. Governed by Standard Contractual Clauses (SCCs) incorporated into our service agreement. Inputs limited to minimum necessary; NOT retained for model training.</li>
+            <li><strong class="text-light">Meta / WhatsApp (United States, with edge presence)</strong> -message delivery only. Governed by the WhatsApp Business Policy + our Cloud API agreement.</li>
+          </ul>
+          <p class="mt-3">Cloudflare's edge processing happens near the requester; persistent data is stored in our Nigerian-anchored configuration where the product supports it.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Retention Periods</h2>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Customer record</strong> (business profile + site config) -lifetime of subscription + 90-day re-activation grace period, then deletion</li>
+            <li><strong class="text-light">Product photos</strong> -up to 12 months after last login OR within 30 days of subscription cancellation</li>
+            <li><strong class="text-light">Voice notes (audio)</strong> -deleted within 30 days of receipt</li>
+            <li><strong class="text-light">Voice transcript (text)</strong> -retained only when used as site copy</li>
+            <li><strong class="text-light">WhatsApp message history</strong> -retained for 24 months for service quality + support</li>
+            <li><strong class="text-light">Payment metadata</strong> -retained per Paystack + tax-record requirements (currently 7 years per Nigerian law)</li>
+            <li><strong class="text-light">Operator logs</strong> -90 days, then aggregated/anonymized</li>
+          </ul>
+          <p class="mt-3">You can request immediate deletion of any specific data class by emailing <a href="mailto:privacy@pejji.com" class="text-teal hover:underline">privacy@pejji.com</a>. We act within 7 days per NDPA.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Risk Assessment + Mitigations</h2>
+          <p>Headline residual risks and our mitigations:</p>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Cross-border AI processing (Anthropic, US)</strong> -mitigated by SCCs + input minimization + no-model-training clause.</li>
+            <li><strong class="text-light">WhatsApp message metadata visible to Meta</strong> -mitigated by limiting content shared via WA to onboarding + service messages; sensitive payment data routed through Paystack-hosted pages.</li>
+            <li><strong class="text-light">Photo + voice note leak</strong> -mitigated by encryption-at-rest on Cloudflare R2 + access-controlled tokens for site rendering + 30-day deletion of voice audio.</li>
+            <li><strong class="text-light">Subprocessor change</strong> -mitigated by notifying subscribers via email + 30-day opt-out window before any new subprocessor is added.</li>
+            <li><strong class="text-light">Operator account compromise</strong> -mitigated by 2FA on Cloudflare + Paystack + Meta admin accounts, scoped API tokens, monthly automated security scans across customer subdomains.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Subject Rights + Contact</h2>
+          <p>Under NDPA, you have the right to access, rectify, delete, or port your personal data. To exercise any of these rights:</p>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Email:</strong> <a href="mailto:privacy@pejji.com" class="text-teal hover:underline">privacy@pejji.com</a></li>
+            <li><strong class="text-light">Postal:</strong> Pejji (BlessedOps Group), c/o Kingsley Olukanni, Calgary, Alberta, Canada / Lagos, Nigeria</li>
+            <li><strong class="text-light">Response time:</strong> within 7 days for routine requests; within 30 days for deletion or porting requests</li>
+          </ul>
+          <p class="mt-3">If we cannot resolve your request, you have the right to lodge a complaint with the Nigeria Data Protection Commission (NDPC).</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Full DPIA</h2>
+          <p>This page is a public summary. The complete DPIA document (with auditor-reviewable risk-scoring matrix, processor-by-processor data-flow diagrams, and incident-response playbook) is available on request to <a href="mailto:privacy@pejji.com" class="text-teal hover:underline">privacy@pejji.com</a>.</p>
+          <p class="mt-3">Document last reviewed: {lastReviewed}. Material changes are notified via your subscribed email + Pejji's <a href="/privacy" class="text-teal hover:underline">privacy policy</a> page.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Base>

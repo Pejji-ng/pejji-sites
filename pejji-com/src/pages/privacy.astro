@@ -44,6 +44,8 @@ import Base from '../layouts/Base.astro';
             <li><strong class="text-light">Google Analytics</strong> -to understand website traffic and usage patterns</li>
             <li><strong class="text-light">Paystack</strong> -to process payments securely</li>
             <li><strong class="text-light">Cloudflare</strong> -to host and deliver our website</li>
+            <li><strong class="text-light">WhatsApp Cloud API (Meta Platforms)</strong> -delivery channel for our WhatsApp-delivered onboarding service. Meta receives message metadata required to deliver messages between you and Pejji. Governed by the <a href="https://www.whatsapp.com/legal/business-policy/" class="text-teal hover:underline">WhatsApp Business Policy</a>.</li>
+            <li><strong class="text-light">Anthropic Claude (US-hosted AI processing)</strong> -powers AI-assisted onboarding conversation, site copy generation, and voice-note transcription. Data is processed under Standard Contractual Clauses (SCCs) per NDPA Articles 26-27. Inputs are limited to the minimum necessary and are NOT retained for model training. See our <a href="/dpia" class="text-teal hover:underline">DPIA</a> for full details.</li>
           </ul>
           <p class="mt-3">Each of these services has its own privacy policy governing how they handle data.</p>
         </div>
@@ -60,6 +62,28 @@ import Base from '../layouts/Base.astro';
         <div>
           <h2 class="text-xl font-semibold text-light mb-3">Data Retention</h2>
           <p>We retain client data for the duration of our service relationship plus 12 months after the engagement ends. After this period, your data is securely deleted unless we are required by law to retain it longer.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Customer Photos & Voice Notes</h2>
+          <p>When you submit product photos or voice notes during onboarding (or any later interaction), we process them to render your website and to transcribe voice input. Specific retention by data type:</p>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Product photos</strong> -retained for the lifetime of the website (up to 12 months after last login). Deleted within 30 days of subscription cancellation OR on written request to <a href="mailto:privacy@pejji.com" class="text-teal hover:underline">privacy@pejji.com</a>.</li>
+            <li><strong class="text-light">Voice notes (audio)</strong> -deleted within 30 days. Transcribed text is retained only when used as site copy.</li>
+            <li><strong class="text-light">Right to erasure</strong> -you can request immediate deletion of any photo or voice note at any time. We act within 7 days per NDPA.</li>
+          </ul>
+          <p class="mt-3">Voice audio is never used to train any AI model.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-light mb-3">Cross-Border Data Transfer Disclosure</h2>
+          <p>Some of our service providers process data outside Nigeria. The Nigeria Data Protection Act (NDPA) and the General Application & Implementation Directive (GAID) require us to disclose this and document the legal basis:</p>
+          <ul class="list-disc list-inside mt-3 space-y-1">
+            <li><strong class="text-light">Anthropic (United States)</strong> -AI processing. Governed by Standard Contractual Clauses (SCCs) incorporated into our service agreement. See our <a href="/dpia" class="text-teal hover:underline">DPIA</a> for the full risk assessment + mitigations.</li>
+            <li><strong class="text-light">Cloudflare (global edge)</strong> -website hosting + WAF. Edge data is processed near the requester; persistent data is stored in Nigerian-anchored configuration where supported.</li>
+            <li><strong class="text-light">Meta (US, via WhatsApp Cloud API)</strong> -message delivery only. Bound by Meta's privacy framework + our Business API agreement.</li>
+          </ul>
+          <p class="mt-3">You can request the SCC text or the full DPIA by emailing <a href="mailto:privacy@pejji.com" class="text-teal hover:underline">privacy@pejji.com</a>. See our <a href="/dpia" class="text-teal hover:underline">DPIA summary page</a> for a public excerpt.</p>
         </div>
 
         <div>
