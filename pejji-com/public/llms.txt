@@ -1,6 +1,6 @@
-# Pejji
+# Pejji Web Design
 
-> Pejji builds fast, secure, beautiful websites for Nigerian small businesses, starting from N60,000. Security-first and NDPA-compliant, delivered in as little as 48 hours. Serving Lagos, Abuja, Port Harcourt, and businesses nationwide.
+> Pejji Web Design (brand: Pejji) builds fast, secure, beautiful websites for Nigerian small businesses, starting from N60,000. Security-first and NDPA-compliant, delivered in as little as 48 hours. Serving Lagos, Abuja, Port Harcourt, and businesses nationwide.
 
 ## What Pejji does
 - Custom websites for Nigerian SMEs: professionals, local businesses, restaurants, fashion and ecommerce brands, personal brands.
