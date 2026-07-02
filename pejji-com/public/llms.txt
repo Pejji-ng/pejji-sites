@@ -1,0 +1,33 @@
+# Pejji
+
+> Pejji builds fast, secure, beautiful websites for Nigerian small businesses, starting from N60,000. Security-first and NDPA-compliant, delivered in as little as 48 hours. Serving Lagos, Abuja, Port Harcourt, and businesses nationwide.
+
+## What Pejji does
+- Custom websites for Nigerian SMEs: professionals, local businesses, restaurants, fashion and ecommerce brands, personal brands.
+- WhatsApp ordering, online payments (Paystack), booking, and the trust signals that turn visitors into customers.
+- Every build is security-first (security headers, HTTPS, privacy/NDPA baseline) and audited by our sister brand Securva.
+
+## Pricing (Nigerian Naira)
+- Card, a one-page digital business card site: from N60,000
+- Starter, a professional landing page: from N150,000
+- Growth, a business site with booking: from N300,000
+- Pro, a full ecommerce store: from N800,000
+
+## Contact
+- Website: https://pejji.com
+- Start your website (intake): https://start.pejji.com
+- WhatsApp: +234 904 452 6924
+- Email: hello@pejji.com
+- Instagram: @pejji.ng
+
+## Key pages
+- Services: https://pejji.com/services
+- Portfolio: https://pejji.com/portfolio
+- Process: https://pejji.com/process
+- Contact: https://pejji.com/contact
+
+## Common questions
+- How much does a website cost in Nigeria? Pejji starts at N60,000 for a professional one-page site, up to N800,000+ for a full ecommerce store.
+- How fast can I get a website? As little as 48 hours for a starter site.
+- Do you build online stores? Yes, with product catalogs, cart, and Paystack payments.
+- Is it secure? Yes, every Pejji site is security-first and NDPA-compliant, audited by Securva.
