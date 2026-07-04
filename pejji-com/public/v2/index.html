@@ -883,6 +883,37 @@
   }
   .foot-bottom .sec-note{ display:flex; align-items:center; gap:9px; }
   .foot-bottom .sec-note svg{ color:var(--teal-hi); }
+  .foot-legal{ display:flex; align-items:center; gap:18px; }
+  .foot-legal a{ color:var(--faint); transition:color .2s ease; }
+  .foot-legal a:hover{ color:var(--teal-hi); }
+
+  /* ============ COOKIE CONSENT ============ */
+  .cookie-consent{
+    position:fixed; left:0; right:0; bottom:0; z-index:70;
+    display:flex; align-items:center; justify-content:center;
+    gap:20px; flex-wrap:wrap;
+    padding:15px 24px;
+    background:rgba(8,17,21,.94);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);
+    box-shadow:0 -14px 40px -12px rgba(0,0,0,.7);
+    font-family:var(--sans);
+  }
+  .cookie-consent[hidden]{ display:none; }
+  .cookie-consent p{ color:var(--muted); font-size:14px; margin:0; max-width:60ch; }
+  .cookie-consent .cc-actions{ display:flex; align-items:center; gap:18px; }
+  .cookie-consent .cc-link{
+    color:var(--teal-hi); font-weight:600; font-size:14px;
+    text-decoration:underline; text-underline-offset:2px;
+  }
+  .cookie-consent .cc-accept{
+    background:linear-gradient(180deg, var(--orange-hi), var(--orange) 55%);
+    color:#1c0f04; font-weight:700; font-size:14px;
+    border:none; border-radius:8px; padding:10px 24px; cursor:pointer;
+    box-shadow:0 8px 22px -8px rgba(245,122,31,.55);
+    transition:transform .18s ease;
+  }
+  .cookie-consent .cc-accept:hover{ transform:translateY(-1px); }
 
   /* mobile WhatsApp bar */
   .wa-bar{
@@ -964,7 +995,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a href="#" class="logo" aria-label="Pejji home">
+    <a href="/" class="logo" aria-label="Pejji home">
       <span class="logo-mark">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M6 21V4h7.5a5.5 5.5 0 1 1 0 11H10" stroke="#04211f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -973,10 +1004,12 @@
       pejji<span class="dot">.</span>
     </a>
     <div class="nav-links">
-      <a href="#pricing">Pricing</a>
-      <a href="#work">Portfolio</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">FAQ</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/process">How It Works</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/partners">Partners</a>
     </div>
     <a href="https://start.pejji.com" class="btn btn-orange" style="margin-left:8px;">Get Started</a>
   </div>
@@ -1017,7 +1050,7 @@
           Start my build
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#work" class="btn btn-ghost">See a live client</a>
+        <a href="/portfolio" class="btn btn-ghost">See a live client</a>
       </div>
 
       <div class="hero-stats">
@@ -1214,7 +1247,7 @@
         <div class="side after" aria-hidden="true">
           <div class="a-title">Your Business <em>· online and working</em></div>
           <p class="a-sub">Found on Google. Trusted on sight. Orders land pre-typed in your WhatsApp, even while you sleep.</p>
-          <span class="a-btn">Book now on WhatsApp</span>
+          <a class="a-btn" href="https://wa.me/2349044526924?text=Hi%20Pejji!%20I%27m%20interested%20in%20getting%20a%20website%20for%20my%20business.">Book now on WhatsApp</a>
           <div class="a-badges"><span>SSL ✓</span><span>NDPA ✓</span><span>ON GOOGLE ✓</span><span>48-HR LAUNCH</span></div>
         </div>
         <div class="ba-handle" aria-hidden="true"></div>
@@ -1357,7 +1390,7 @@
         </div>
         <div class="promax-cta">
           <div class="promax-price">From ₦1.5M <small>+ monthly</small></div>
-          <a href="https://wa.me/2349044526924?text=Hi%20Pejji!%20I%27d%20like%20to%20book%20a%20Pro%20Max%20AI%20call." class="btn btn-orange">Book a call
+          <a href="https://wa.me/2349044526924?text=Hi%20Pejji!%20I%27m%20interested%20in%20getting%20a%20website%20for%20my%20business." class="btn btn-orange">Book a call
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -1478,7 +1511,7 @@
         <p>Tell us about your business today. If a slot is open, your build can start this week and be live within days.</p>
       </div>
       <div class="cta-actions">
-        <a href="https://wa.me/2349044526924?text=Hi%20Pejji!%20I%27m%20interested%20in%20getting%20a%20website%20for%20my%20business." class="btn btn-dark">Get started on WhatsApp
+        <a href="https://start.pejji.com" class="btn btn-dark">Get started on WhatsApp
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12a9 9 0 1 0-16.3 5.2L3 21l3.9-1.6A9 9 0 0 0 21 12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         </a>
         <a href="#pricing" class="btn btn-ghost" style="border-color:rgba(34,17,3,.35); color:#221103; background:rgba(255,255,255,.14);">See pricing again</a>
@@ -1493,7 +1526,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="#" class="logo">
+        <a href="/" class="logo">
           <span class="logo-mark">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M6 21V4h7.5a5.5 5.5 0 1 1 0 11H10" stroke="#04211f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1509,20 +1542,20 @@
       <div class="foot-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#why">Why Pejji</a></li>
-          <li><a href="#work">Portfolio</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/portfolio">Our Work</a></li>
+          <li><a href="/process">How It Works</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#pricing">48-hour Card sites</a></li>
-          <li><a href="#pricing">Custom business sites</a></li>
-          <li><a href="#pricing">Shoppable stores</a></li>
-          <li><a href="#pricing">Pro Max AI agents</a></li>
+          <li><a href="/services">Services &amp; Pricing</a></li>
+          <li><a href="/services">Custom business sites</a></li>
+          <li><a href="/services">Shoppable stores</a></li>
+          <li><a href="/services">Pro Max AI agents</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1536,6 +1569,10 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 PEJJI · ALL RIGHTS RESERVED</span>
+      <span class="foot-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </span>
       <span class="sec-note">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7.5 3v5.4c0 4.5-3 8.4-7.5 9.6-4.5-1.2-7.5-5.1-7.5-9.6V6L12 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         SECURITY BY SECURVA · EVERY BUILD AUDITED
@@ -1548,6 +1585,15 @@
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12a9 9 0 1 0-16.3 5.2L3 21l3.9-1.6A9 9 0 0 0 21 12z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
   Chat on WhatsApp · Get started
 </a>
+
+<!-- ============ COOKIE CONSENT ============ -->
+<div id="cookie-banner" class="cookie-consent" role="region" aria-label="Cookie consent" hidden>
+  <p>We use cookies to improve your experience and analyze site traffic.</p>
+  <div class="cc-actions">
+    <a href="/privacy" class="cc-link">Privacy Policy</a>
+    <button type="button" id="cookie-accept" class="cc-accept">Accept</button>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -1638,6 +1684,21 @@
     baR.addEventListener('input', function(){
       ba.style.setProperty('--cut', baR.value + '%');
     });
+  }
+
+  /* ---- cookie consent ---- */
+  var cookieBanner = document.getElementById('cookie-banner');
+  var cookieAccept = document.getElementById('cookie-accept');
+  if (cookieBanner){
+    var accepted = false;
+    try { accepted = localStorage.getItem('cookie-consent') === 'accepted'; } catch(e){}
+    if (!accepted){ cookieBanner.hidden = false; }
+    if (cookieAccept){
+      cookieAccept.addEventListener('click', function(){
+        try { localStorage.setItem('cookie-consent', 'accepted'); } catch(e){}
+        cookieBanner.hidden = true;
+      });
+    }
   }
 })();
 </script>
