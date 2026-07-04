@@ -820,8 +820,66 @@
 
   /* ============ RECEIPTS ============ */
   .receipts-grid{
-    display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:center;
+    display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center;
   }
+  /* live-site proof (browser frame) */
+  .live-zone{ position:relative; }
+  .browser{
+    border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    background:#0e2026;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.65), 0 0 90px -40px rgba(23,182,182,.28);
+    transform:rotate(-1deg); transition:transform .35s ease;
+  }
+  .browser:hover{ transform:rotate(0deg) translateY(-4px); }
+  .browser-bar{
+    display:flex; align-items:center; gap:7px; padding:11px 14px;
+    background:#0a161b; border-bottom:1px solid var(--line-soft);
+  }
+  .browser-bar .bdot{ width:11px; height:11px; border-radius:50%; }
+  .browser-bar .bdot:nth-child(1){ background:#f57a1f; }
+  .browser-bar .bdot:nth-child(2){ background:#e6b93f; }
+  .browser-bar .bdot:nth-child(3){ background:#17b6b6; }
+  .browser-url{
+    margin-left:10px; flex:1; display:flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:11.5px; color:var(--muted);
+    background:#0e2026; border:1px solid var(--line-soft); border-radius:7px; padding:5px 12px;
+  }
+  .browser-url .lock{ font-size:10px; opacity:.7; }
+  .browser-view{ display:block; background:#fff; line-height:0; }
+  .browser-view img{ display:block; width:100%; height:auto; }
+  .live-cap{
+    display:flex; align-items:center; gap:12px; margin-top:20px;
+    font-family:var(--mono); font-size:12.2px; color:var(--muted);
+  }
+  .live-cap b{ color:var(--ink); }
+  .live-badge{
+    flex:none; display:inline-flex; align-items:center; gap:7px;
+    font-size:11px; letter-spacing:.14em; color:var(--teal-hi);
+    border:1px solid var(--line); border-radius:999px; padding:5px 11px;
+    background:rgba(23,182,182,.06);
+  }
+  .live-badge .led{
+    width:7px; height:7px; border-radius:50%; background:var(--teal-hi);
+    box-shadow:0 0 10px var(--teal-hi); animation:led 2.2s ease-in-out infinite;
+  }
+  /* testimonial */
+  .tstmnl blockquote{
+    font-family:var(--serif); font-style:italic; font-size:19px; line-height:1.55;
+    color:var(--muted); margin:0 0 22px; padding-left:22px; border-left:3px solid var(--orange);
+  }
+  .tstmnl blockquote .q-lead{
+    display:block; font-style:italic; font-size:25px; line-height:1.35;
+    color:var(--ink); margin-bottom:9px;
+  }
+  .tby{ display:flex; align-items:center; gap:13px; margin-bottom:30px; }
+  .tby .mono-av{
+    flex:none; width:44px; height:44px; border-radius:12px; display:grid; place-items:center;
+    font-family:var(--mono); font-weight:700; font-size:15px; color:var(--teal-hi);
+    background:rgba(23,182,182,.08); border:1px solid var(--line);
+  }
+  .tby-t{ display:flex; flex-direction:column; line-height:1.35; }
+  .tby-t b{ color:var(--ink); font-size:15px; font-weight:650; }
+  .tby-t span{ color:var(--faint); font-size:12.3px; font-family:var(--mono); }
   .ticket-zone{ position:relative; }
   .ticket{
     position:relative;
@@ -1019,7 +1077,9 @@
     .steps{ grid-template-columns:repeat(2,1fr); gap:40px 0; }
     .plans{ grid-template-columns:repeat(2,1fr); }
     .plan-pop{ transform:none; }
-    .receipts-grid{ grid-template-columns:1fr; gap:64px; }
+    .receipts-grid{ grid-template-columns:1fr; gap:52px; }
+    .live-zone{ max-width:560px; margin:0 auto; }
+    .browser{ transform:none; }
     .ticket{ max-width:520px; margin:0 auto; }
     .cta-card{ grid-template-columns:1fr; padding:60px 44px; }
     .promax-in{ grid-template-columns:1fr; }
@@ -1042,6 +1102,9 @@
     .ba{ aspect-ratio:4/4.4; }
     .steps{ grid-template-columns:1fr; border-left:0; }
     .step{ border-right:0; border-left:1px solid var(--line-soft); margin-bottom:36px; }
+    .tstmnl blockquote{ font-size:17px; }
+    .tstmnl blockquote .q-lead{ font-size:22px; }
+    .live-cap{ font-size:11.4px; }
     .plans{ grid-template-columns:1fr; }
     .care-grid{ grid-template-columns:1fr; }
     .care-strip{ padding:28px 24px; }
@@ -1537,43 +1600,37 @@
     </div>
 
     <div class="receipts-grid">
-      <div class="ticket-zone rv" style="--d:.05s;">
-        <div class="ticket" aria-label="Pejji build ticket for Deng Details Cleaning">
-          <div class="stamp">RECEIPT · VERIFIED</div>
-          <div class="ticket-bar">
-            <span class="tdot" style="background:#f57a1f;"></span>
-            <span class="tdot" style="background:#17b6b6;"></span>
-            <span class="tdot" style="background:#22343a;"></span>
-            <span class="label">PEJJI BUILD TICKET</span>
-            <span class="tnum">#0056</span>
+      <div class="live-zone rv" style="--d:.05s;">
+        <div class="browser" aria-label="Live screenshot of dengdetails.com, built by Pejji">
+          <div class="browser-bar">
+            <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+            <span class="browser-url"><span class="lock" aria-hidden="true">🔒</span>dengdetails.com</span>
           </div>
-          <div class="ticket-body">
-            <div class="trow"><span class="k">client</span><span class="v">Deng Details Cleaning</span></div>
-            <div class="trow"><span class="k">package</span><span class="v">Growth + Care Plan</span></div>
-            <div class="trow"><span class="k">domain</span><span class="v">dengdetails.com</span></div>
-            <div class="trow"><span class="k">brief received</span><span class="v">Mon 09:14</span></div>
-            <div class="trow"><span class="k">build started</span><span class="v">Mon 09:40</span></div>
-            <div class="trow"><span class="k">security audit</span><span class="v pass">PASS · headers / forms / deps</span></div>
-            <div class="trow"><span class="k">shipped</span><span class="v hot">Wed 08:52 · 47h 38m</span></div>
-            <div class="trow"><span class="k">status</span><span class="v pass"><span class="led"></span>LIVE ON CLIENT DOMAIN</span></div>
-            <div class="ticket-foot">care plan active · next security check in 6 days<span class="cursor" aria-hidden="true"></span></div>
+          <div class="browser-view">
+            <img src="/v2/deng-live.png" width="1120" height="643" alt="Deng Details Cleaning website built by Pejji, live at dengdetails.com" loading="lazy" />
           </div>
+        </div>
+        <div class="live-cap">
+          <span class="live-badge"><span class="led" aria-hidden="true"></span>LIVE</span>
+          <span>Real client site · shipped in <b>47h 38m</b> · on an active Care Plan</span>
         </div>
       </div>
 
-      <div class="receipt-copy rv" style="--d:.15s;">
-        <div class="eyebrow" style="margin-bottom:6px;">Client #0056 · Live at dengdetails.com</div>
+      <div class="tstmnl rv" style="--d:.15s;">
+        <div class="eyebrow" style="margin-bottom:16px;">Client #0056 · dengdetails.com</div>
         <blockquote>
-          Paid on Monday. Live on our own domain by Wednesday.
-          Customers now find us, message us on WhatsApp, and book.
-          We never touch the website. Pejji handles everything.
+          <span class="q-lead">Paid on Monday. Live by Wednesday.</span>
+          Now customers find us, message us on WhatsApp, and book. We never touch the website. Pejji handles everything.
         </blockquote>
-        <cite>DENG DETAILS CLEANING · dengdetails.com</cite>
+        <div class="tby">
+          <span class="mono-av" aria-hidden="true">DD</span>
+          <span class="tby-t"><b>Deng Details Cleaning</b><span>Owner · Cleaning services, live on dengdetails.com</span></span>
+        </div>
 
         <div class="proof-rows">
-          <div class="proof"><span class="pk">Shipped</span><span><b>End to end in under 48 hours,</b> from first brief to live on the client's own domain.</span></div>
-          <div class="proof"><span class="pk">Audited</span><span><b>We audit our own builds.</b> Every Pejji site passes the same Securva checks we run for paying security clients.</span></div>
-          <div class="proof"><span class="pk">Running</span><span><b>On an active Care Plan today.</b> Changes managed, security watched, WhatsApp and payments healthy.</span></div>
+          <div class="proof"><span class="pk">Shipped</span><span><b>Under 48 hours,</b> from first brief to live on the client's own domain.</span></div>
+          <div class="proof"><span class="pk">Audited</span><span><b>Securva-checked.</b> The same audit we run for paying security clients.</span></div>
+          <div class="proof"><span class="pk">Running</span><span><b>Care Plan active.</b> Changes, security, WhatsApp and payments all watched.</span></div>
         </div>
       </div>
     </div>
