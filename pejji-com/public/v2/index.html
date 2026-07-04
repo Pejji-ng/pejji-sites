@@ -178,6 +178,61 @@
   .nav-links a:hover::after{ width:100%; }
   .nav .btn{ padding:11px 22px; font-size:14px; }
 
+  /* hamburger button (mobile only) */
+  .nav-burger{
+    display:none; margin-left:14px; flex:none;
+    width:44px; height:44px; border-radius:10px; cursor:pointer;
+    align-items:center; justify-content:center; gap:5px; flex-direction:column;
+    background:rgba(23,182,182,.06); border:1px solid var(--line);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .nav-burger:hover{ border-color:var(--teal); background:rgba(23,182,182,.10); }
+  .nav-burger span{
+    display:block; width:20px; height:2px; border-radius:2px; background:var(--ink);
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .nav-burger span:nth-child(odd){ background:var(--teal-hi); }
+
+  /* mobile nav panel */
+  .mnav-backdrop{
+    position:fixed; inset:0; z-index:70; background:rgba(4,10,12,.6);
+    backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+    opacity:0; transition:opacity .3s ease;
+  }
+  .mnav-backdrop.open{ opacity:1; }
+  .mnav{
+    position:fixed; top:0; right:0; bottom:0; z-index:71;
+    width:min(84vw, 340px);
+    background:linear-gradient(200deg, var(--panel-2) 0%, var(--bg) 78%);
+    border-left:1px solid var(--line);
+    box-shadow:-30px 0 70px -30px rgba(0,0,0,.8);
+    padding:22px 24px 32px;
+    display:flex; flex-direction:column;
+    transform:translateX(102%); transition:transform .3s cubic-bezier(.2,.8,.2,1);
+    overflow-y:auto;
+  }
+  .mnav.open{ transform:translateX(0); }
+  .mnav-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
+  .mnav-close{
+    width:44px; height:44px; flex:none; border-radius:10px; cursor:pointer;
+    display:grid; place-items:center; color:var(--ink);
+    background:rgba(23,182,182,.06); border:1px solid var(--line);
+    transition:border-color .2s ease, background .2s ease, color .2s ease;
+  }
+  .mnav-close:hover{ border-color:var(--teal); background:rgba(23,182,182,.10); color:var(--teal-hi); }
+  .mnav-links{ display:flex; flex-direction:column; gap:4px; }
+  .mnav-links a{
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:18px; font-weight:700; letter-spacing:-.01em; color:var(--ink);
+    padding:16px 8px; border-bottom:1px solid var(--line-soft);
+    transition:color .2s ease, padding-left .2s ease;
+  }
+  .mnav-links a:hover, .mnav-links a:active{ color:var(--teal-hi); padding-left:14px; }
+  .mnav-links a::after{
+    content:"→"; color:var(--orange); font-family:var(--mono); opacity:.55;
+  }
+  .mnav-cta{ margin-top:26px; width:100%; justify-content:center; }
+
   /* ============ HERO ============ */
   .hero{
     position:relative;
@@ -948,6 +1003,8 @@
   @media (max-width:720px){
     .wrap{ padding:0 22px; }
     .nav-links{ display:none; }
+    .nav-burger{ display:flex; }
+    .nav .nav-cta{ display:none; }
     .hero{ padding:130px 0 70px; }
     .hero-stats{ flex-wrap:wrap; }
     .hstat{ padding-right:22px; margin-right:22px; }
@@ -1011,9 +1068,41 @@
       <a href="/blog">Blog</a>
       <a href="/partners">Partners</a>
     </div>
-    <a href="https://start.pejji.com" class="btn btn-orange" style="margin-left:8px;">Get Started</a>
+    <a href="https://start.pejji.com" class="btn btn-orange nav-cta" style="margin-left:8px;">Get Started</a>
+    <button type="button" class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- ============ MOBILE NAV ============ -->
+<div class="mnav-backdrop" id="mnavBackdrop" hidden></div>
+<aside class="mnav" id="mobileNav" aria-hidden="true" aria-label="Mobile menu">
+  <div class="mnav-top">
+    <span class="logo" aria-hidden="true">
+      <span class="logo-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 21V4h7.5a5.5 5.5 0 1 1 0 11H10" stroke="#04211f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      pejji<span class="dot">.</span>
+    </span>
+    <button type="button" class="mnav-close" id="mnavClose" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mnav-links" aria-label="Mobile primary">
+    <a href="/services">Services</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/process">How It Works</a>
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+    <a href="/partners">Partners</a>
+  </nav>
+  <a href="https://start.pejji.com" class="btn btn-orange mnav-cta">Get Started
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</aside>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -1699,6 +1788,50 @@
         cookieBanner.hidden = true;
       });
     }
+  }
+
+  /* ---- mobile hamburger menu ---- */
+  var burger = document.getElementById('navBurger');
+  var mnav = document.getElementById('mobileNav');
+  var mnavBackdrop = document.getElementById('mnavBackdrop');
+  var mnavClose = document.getElementById('mnavClose');
+  if (burger && mnav && mnavBackdrop){
+    var openMenu = function(){
+      mnavBackdrop.hidden = false;
+      if (reduced){
+        mnavBackdrop.classList.add('open');
+        mnav.classList.add('open');
+      } else {
+        requestAnimationFrame(function(){
+          mnavBackdrop.classList.add('open');
+          mnav.classList.add('open');
+        });
+      }
+      mnav.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    var closeMenu = function(){
+      mnavBackdrop.classList.remove('open');
+      mnav.classList.remove('open');
+      mnav.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (reduced){
+        mnavBackdrop.hidden = true;
+      } else {
+        setTimeout(function(){
+          if (!mnavBackdrop.classList.contains('open')) mnavBackdrop.hidden = true;
+        }, 320);
+      }
+    };
+    burger.addEventListener('click', openMenu);
+    if (mnavClose) mnavClose.addEventListener('click', closeMenu);
+    mnavBackdrop.addEventListener('click', closeMenu);
+    mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && mnav.classList.contains('open')) closeMenu();
+    });
   }
 })();
 </script>
