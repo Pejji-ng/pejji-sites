@@ -180,7 +180,7 @@
 
   /* hamburger button (mobile only) */
   .nav-burger{
-    display:none; margin-left:14px; flex:none;
+    display:none; margin-left:auto; flex:none;
     width:44px; height:44px; border-radius:10px; cursor:pointer;
     align-items:center; justify-content:center; gap:5px; flex-direction:column;
     background:rgba(23,182,182,.06); border:1px solid var(--line);
@@ -1225,13 +1225,13 @@
     </div>
 
     <div class="pain-grid">
-      <div class="pain-num rv" id="painNum" aria-label="84 percent"><span id="pct">0</span><small>%</small></div>
+      <div class="pain-num rv" id="painNum" aria-label="80 plus percent"><span id="pct">0</span><small>%+</small></div>
       <div class="pain-copy rv" style="--d:.1s;">
         <h2>of Nigerian SMEs don't have a website. <em>Your competitors already do.</em></h2>
         <p>
           A website works every hour you don't. Google finds you, customers trust you on sight,
-          and WhatsApp closes the sale while you sleep. The 16% who are online are quietly
-          taking orders from the 84% who are not.
+          and WhatsApp closes the sale while you sleep. The ones who are online are quietly
+          taking orders from the 80% who are not.
         </p>
       </div>
     </div>
@@ -1568,7 +1568,7 @@
       </details>
       <details>
         <summary>Do I really need a website if I have Instagram?</summary>
-        <p>Instagram is rented land; a website is owned. 84% of Nigerian SMEs have no website, which means the ones that do are capturing the customers you're missing. A site shows up on Google, builds trust on sight, and turns visits into WhatsApp conversations that close, even while you sleep.</p>
+        <p>Instagram is rented land; a website is owned. Over 80% of Nigerian SMEs have no website, which means the ones that do are capturing the customers you're missing. A site shows up on Google, builds trust on sight, and turns visits into WhatsApp conversations that close, even while you sleep.</p>
       </details>
       <details>
         <summary>What exactly does the monthly Care Plan cover?</summary>
@@ -1742,10 +1742,10 @@
   var pct = document.getElementById('pct'), pctDone = false;
   function countPct(){
     if (pctDone) return; pctDone = true;
-    if (reduced){ pct.textContent = '84'; return; }
+    if (reduced){ pct.textContent = '80'; return; }
     var v = 0;
     var iv = setInterval(function(){
-      v += 3; if (v >= 84){ v = 84; clearInterval(iv); }
+      v += 3; if (v >= 80){ v = 80; clearInterval(iv); }
       pct.textContent = v;
     }, 30);
   }
