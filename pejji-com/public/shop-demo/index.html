@@ -79,9 +79,18 @@
     padding:8px;margin:8px;border-radius:9px;text-decoration:none}
   .pill{display:inline-block;font-size:10.5px;color:var(--faint);border:1px solid var(--line);
     border-radius:999px;padding:3px 9px;margin-bottom:12px}
+  .pipe{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:center;margin:0 0 14px}
+  .pstep{font-size:11px;font-weight:700;color:var(--muted);background:var(--card2);border:1px solid var(--line);
+    border-radius:999px;padding:5px 10px}
+  .pstep.sec{color:var(--ok);border-color:rgba(43,214,123,.45);background:rgba(43,214,123,.08)}
+  .parr{color:var(--faint);font-size:12px}
+  .secrep{background:rgba(43,214,123,.06);border:1px solid rgba(43,214,123,.28);border-radius:9px;
+    padding:8px 10px;margin-top:9px;font-size:11px;color:#a7d9bf;line-height:1.5}
+  .secrep b{color:var(--ok)}
+  .secrep .ln{display:block}
 </style></head>
 <body>
-<div class="demo-flag">🔬 <b>Interactive demo</b> &nbsp;·&nbsp; tap the 3 tabs, add a product as the seller, approve it as you, watch it appear in the live store</div>
+<div class="demo-flag">🔬 <b>Interactive demo</b> &nbsp;·&nbsp; seller adds → 🛡️ Securva security scan → you approve → live store. Tap the 3 tabs to walk it.</div>
 <header>
   <div class="brand"><span class="logo">P</span> pejji <span class="dot">.</span></div>
   <div class="tabs">
@@ -122,6 +131,13 @@
   <h2>Awaiting your approval</h2>
   <div class="sub">Nothing goes live without your yes. Keep every store clean and premium.</div>
   <div class="note">This is the gate that makes Pejji <b>managed, not DIY.</b> The seller does the work, you protect the brand and the quality. It is why they pay monthly.</div>
+  <div class="pipe">
+    <span class="pstep">Upload</span><span class="parr">→</span>
+    <span class="pstep sec">🛡️ Securva security scan</span><span class="parr">→</span>
+    <span class="pstep">Your approval</span><span class="parr">→</span>
+    <span class="pstep">Live</span>
+  </div>
+  <div class="note" style="border-color:#2a4a2f"><b style="color:var(--ok)">🛡️ Every upload is security-screened before it can reach you.</b> Not just quality, deep security: the photo is re-encoded and stripped of hidden payloads and location data, the text is sanitized against injection, and links are checked for scams. Buddy also pentests this whole pipeline, so the same team that finds real CVEs guards your customers' stores.</div>
   <div id="adminList"></div>
   <h2 style="margin-top:24px">Already live</h2>
   <div class="sub">Approved and showing in their store.</div>
@@ -171,6 +187,10 @@
     document.getElementById("adminList").innerHTML=pend.length?pend.map(function(p){
       return '<div class="prod" style="flex-wrap:wrap">'+thumb(p)+'<div class="pinfo"><div class="pname">'+esc(p.title)+'</div>'+
       '<div class="pmeta">'+esc(p.size)+(p.colour?' · '+esc(p.colour):'')+'</div><div class="pprice">'+esc(p.price)+'</div></div>'+
+      '<div class="secrep" style="flex-basis:100%"><b>🛡️ Securva scan · passed</b>'+
+      '<span class="ln">✓ Photo re-encoded, hidden payloads + location data stripped</span>'+
+      '<span class="ln">✓ Title / price sanitized, no injection</span>'+
+      '<span class="ln">✓ No scam or malware links</span></div>'+
       '<div class="act" style="flex-basis:100%"><button class="ap" onclick="approve('+p.id+')">✓ Approve, go live</button>'+
       '<button class="rj" onclick="reject('+p.id+')">Reject</button></div></div>';
     }).join(""):'<div class="empty">Nothing waiting. All caught up ✓</div>';
