@@ -227,5 +227,8 @@
   };
 
   render();
+  // deep-link a tab via ?tab=admin|store (default seller)
+  try{var _tab=new URLSearchParams(location.search).get("tab");
+    if(_tab){var _t=document.querySelector('.tab[data-v="'+_tab+'"]');if(_t)_t.click();}}catch(e){}
 </script>
 </body></html>
