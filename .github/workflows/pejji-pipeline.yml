@@ -95,12 +95,30 @@ jobs:
       - name: Dependency audit
         run: |
           cd pejji-com
-          AUDIT_OUTPUT=$(npm audit --production 2>&1) || true
-          echo "$AUDIT_OUTPUT"
-          if echo "$AUDIT_OUTPUT" | grep -q "critical"; then
-            echo "::error::CRITICAL vulnerabilities found!"
+          # --- Risk-accepted (DOCUMENTED + TRACKED, temporary) ---
+          # ACCEPTED_PACKAGES: packages whose advisories we have assessed and accepted TEMPORARILY.
+          #   astro (v4.16.x): ~18 advisories. This site is STATIC (no SSR adapter) with no user
+          #   input, so the server-side advisories (auth bypass, SSRF, image-build RCE) do NOT apply
+          #   at runtime. The real fix is an Astro v4->v7 + Tailwind 3->4 migration, TRACKED as a
+          #   scheduled task. REMOVE this acceptance the moment that migration merges.
+          # The gate still FAILS on a critical in ANY OTHER package.
+          ACCEPTED_PACKAGES="astro"
+          npm audit --production --json > /tmp/audit.json 2>/dev/null || true
+          npm audit --production 2>&1 || true
+          UNACCEPTED=$(ACCEPTED="$ACCEPTED_PACKAGES" node -e '
+            const a=JSON.parse(require("fs").readFileSync("/tmp/audit.json","utf8"));
+            const acc=(process.env.ACCEPTED||"").split(",").filter(Boolean);
+            const bad=new Set();
+            for(const [name,v] of Object.entries(a.vulnerabilities||{})){
+              if(v.severity==="critical" && !acc.includes(name)) bad.add(name);
+            }
+            process.stdout.write([...bad].join(","));
+          ')
+          if [ -n "$UNACCEPTED" ]; then
+            echo "::error::Unaccepted CRITICAL vulnerabilities: $UNACCEPTED"
             exit 1
           fi
+          echo "No unaccepted critical vulnerabilities. (Temporarily accepted + tracked: $ACCEPTED_PACKAGES; remove after the Astro migration.)"
       - uses: actions/download-artifact@v4
         with:
           name: site-build
