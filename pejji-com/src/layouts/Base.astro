@@ -83,7 +83,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
       html.light .text-white\/40 { color: rgba(0,0,0,0.35); }
       html.light .text-white\/30 { color: rgba(0,0,0,0.25); }
       html.light .carousel-dot { background: rgba(0,0,0,0.12); }
-      html.light .carousel-dot.active { background: #0A8F8F; }
+      html.light .carousel-dot.active { background: #2b8fe0; }
       html.light .shadow-black\/20 { --tw-shadow-color: rgba(0,0,0,0.08); }
     </style>
 
@@ -154,9 +154,9 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
         background: linear-gradient(
           110deg,
           transparent 15%,
-          rgba(10, 143, 143, 0.12) 35%,
-          rgba(10, 143, 143, 0.25) 50%,
-          rgba(10, 143, 143, 0.12) 65%,
+          rgba(43, 143, 224, 0.12) 35%,
+          rgba(43, 143, 224, 0.25) 50%,
+          rgba(43, 143, 224, 0.12) 65%,
           transparent 85%
         );
         background-size: 200% 100%;
@@ -220,7 +220,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
         pointer-events: none;
       }
       .card-glow:hover::before {
-        background: linear-gradient(135deg, #0A8F8F, #F57A1F, #0A8F8F);
+        background: linear-gradient(135deg, #2b8fe0, #F57A1F, #2b8fe0);
       }
 
       /* Back to top button */
@@ -282,7 +282,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
       }
       .card-tactile:hover {
         transform: translateY(-8px);
-        box-shadow: 0 20px 50px -15px rgba(10, 143, 143, 0.25), 0 0 0 1px rgba(10, 143, 143, 0.1);
+        box-shadow: 0 20px 50px -15px rgba(43, 143, 224, 0.25), 0 0 0 1px rgba(43, 143, 224, 0.1);
       }
       @media (hover: none) {
         .card-tactile:active {
@@ -333,7 +333,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
         transition: background 0.3s, width 0.3s;
       }
       .carousel-dot.active {
-        background: #0A8F8F;
+        background: #2b8fe0;
         width: 24px;
         border-radius: 4px;
       }
@@ -349,7 +349,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
         left: 0;
         width: 0;
         height: 2px;
-        background: #0A8F8F;
+        background: #2b8fe0;
         transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .nav-link:hover::after {
@@ -785,7 +785,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
               const dist = Math.sqrt(dx * dx + dy * dy);
               if (dist < 120) {
                 pCtx.beginPath();
-                pCtx.strokeStyle = `rgba(10, 143, 143, ${0.1 * (1 - dist / 120)})`;
+                pCtx.strokeStyle = `rgba(43, 143, 224, ${0.1 * (1 - dist / 120)})`;
                 pCtx.lineWidth = 0.5;
                 pCtx.moveTo(heroParticles[i].x, heroParticles[i].y);
                 pCtx.lineTo(heroParticles[j].x, heroParticles[j].y);
