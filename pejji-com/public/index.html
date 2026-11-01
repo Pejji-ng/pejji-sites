@@ -38,10 +38,10 @@
 <style>
   /* ============ TOKENS ============ */
   :root{
-    --bg:        #081426;
-    --bg-2:      #0a1a30;
-    --panel:     #0e2140;
-    --panel-2:   #132a4f;
+    --bg:        #0f2a4d;
+    --bg-2:      #14315a;
+    --panel:     #183761;
+    --panel-2:   #1e4270;
     --line:      rgba(43,143,224,.16);
     --line-soft: rgba(43,143,224,.09);
     --teal:      #2b8fe0;
@@ -1370,7 +1370,44 @@
 @media(max-width:820px){.offer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.offer-grid{grid-template-columns:1fr}}
 </style>
-<section class="sec" id="offer" style="padding-top:80px;padding-bottom:80px;">
+<style id="light-bands">
+/* ============ LIGHT BANDS — premium alternating sections ============ */
+.sec--light{ background:#f4f7fc; color:#50607d; }
+.sec--light .eyebrow{ color:#1f6fc0; }
+.sec--light .h2{ color:#0b1b3a; }
+.sec--light .h2 em{ color:#1f6fc0; }
+.sec--light .lede{ color:#50607d; }
+.sec--light h3{ color:#0b1b3a; }
+.sec--light p{ color:#50607d; }
+/* what-you-get cards */
+.sec--light .offer-item{ background:#ffffff; border-color:rgba(11,27,58,.10); box-shadow:0 1px 2px rgba(11,27,58,.05), 0 12px 30px -16px rgba(11,27,58,.22); }
+.sec--light .offer-item b{ color:#0b1b3a; }
+.sec--light .offer-item span{ color:#50607d; }
+.sec--light .oi-ico{ background:rgba(43,143,224,.12); color:#1f6fc0; }
+.sec--light .offer-note{ color:#1f6fc0; }
+/* how-it-works steps */
+.sec--light .steps{ border-left-color:rgba(11,27,58,.10); }
+.sec--light .step{ border-right-color:rgba(11,27,58,.10); }
+.sec--light .step h3{ color:#0b1b3a; }
+.sec--light .step p{ color:#50607d; }
+.sec--light .step-track::before{ background:repeating-linear-gradient(to right, rgba(31,111,192,.45) 0 6px, transparent 6px 13px); }
+.sec--light .step-node{ background:#0f2a4d; color:#eaf1fb; box-shadow:0 0 0 6px rgba(43,143,224,.08), 0 10px 22px -8px rgba(31,111,192,.45); }
+/* brand + merch */
+.sec--light .bm-card{ background:#ffffff; border-color:rgba(11,27,58,.10); box-shadow:0 1px 2px rgba(11,27,58,.05), 0 12px 30px -16px rgba(11,27,58,.22); }
+.sec--light .bm-card h3{ color:#0b1b3a; }
+.sec--light .bm-card p{ color:#50607d; }
+.sec--light .bm-card .bm-ico{ background:rgba(43,143,224,.12); color:#1f6fc0; }
+.sec--light .bm-hero{ border-color:rgba(11,27,58,.10); box-shadow:0 24px 50px -24px rgba(11,27,58,.28); }
+.sec--light .bm-band{ background:linear-gradient(90deg, rgba(245,122,31,.10), transparent); }
+.sec--light .bm-band h3{ color:#0b1b3a; }
+.sec--light .bm-band p{ color:#50607d; }
+/* faq */
+.sec--light .faq details{ border-bottom-color:rgba(11,27,58,.12); }
+.sec--light .faq summary{ color:#0b1b3a; }
+.sec--light .faq details p{ color:#50607d; }
+.sec--light .faq details p b{ color:#0b1b3a; }
+</style>
+<section class="sec sec--light" id="offer" style="padding-top:80px;padding-bottom:80px;">
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:38px;">
       <div class="eyebrow">The whole brand, run for you</div>
@@ -1447,7 +1484,7 @@
 </section>
 
 <!-- ============ HOW IT WORKS ============ -->
-<section class="sec" id="how">
+<section class="sec sec--light" id="how">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">How it works</div>
@@ -1663,7 +1700,7 @@
 .bm-cta{margin-top:34px;display:flex;justify-content:center}
 @media(max-width:820px){.bm-grid{grid-template-columns:1fr}}
 </style>
-<section class="sec" id="brand-merch">
+<section class="sec sec--light" id="brand-merch">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">Beyond the website</div>
@@ -1681,7 +1718,7 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="sec" id="faq" style="padding-top:0;">
+<section class="sec sec--light" id="faq" style="padding-top:0;">
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:40px;">
       <div class="eyebrow">Questions, answered</div>
