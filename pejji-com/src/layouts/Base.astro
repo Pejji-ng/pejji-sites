@@ -55,11 +55,16 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
     <style is:global>
       /* Theme CSS variables */
       :root {
-        --color-dark: 13 13 18;
-        --color-surface: 26 26 36;
-        --color-light: 232 232 237;
-        --color-subtle: 136 136 136;
+        --color-dark: 8 20 38;
+        --color-surface: 14 33 64;
+        --color-light: 234 241 251;
+        --color-subtle: 159 176 208;
       }
+      /* adaptive brand logo: light wordmark on dark theme, navy wordmark on light theme */
+      .logo-img{ height:30px; width:auto; display:block; }
+      .logo-dark{ display:none; }
+      html.light .logo-light{ display:none; }
+      html.light .logo-dark{ display:block; }
       html.light {
         --color-dark: 245 245 240;
         --color-surface: 255 255 255;
@@ -476,7 +481,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark/80 backdrop-blur-md border-b border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20">
-          <a href="/" class="text-2xl font-bold text-teal">Pejji</a>
+          <a href="/" class="flex items-center" aria-label="Pejji home"><img src="/pejji-logo.png" alt="Pejji" class="logo-img logo-light" width="82" height="30" /><img src="/pejji-logo-dark.png" alt="Pejji" class="logo-img logo-dark" width="82" height="30" /></a>
           <div class="hidden md:flex items-center gap-8">
             <a href="/services" class="nav-link text-sm text-subtle hover:text-light transition-colors">Services</a>
             <a href="/#brand-merch" class="nav-link text-sm text-subtle hover:text-light transition-colors">Brand + Merch</a>
@@ -522,7 +527,7 @@ const { title, description = "Pejji builds and runs your whole brand for Nigeria
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           <div>
-            <a href="/" class="text-2xl font-bold text-teal">Pejji</a>
+            <a href="/" class="flex items-center" aria-label="Pejji home"><img src="/pejji-logo.png" alt="Pejji" class="logo-img logo-light" width="82" height="30" /><img src="/pejji-logo-dark.png" alt="Pejji" class="logo-img logo-dark" width="82" height="30" /></a>
             <p class="text-subtle text-sm mt-3">A BlessedOps Group Company</p>
             <p class="text-subtle text-sm mt-1">Building Nigeria's digital future, one brand at a time.</p>
           </div>

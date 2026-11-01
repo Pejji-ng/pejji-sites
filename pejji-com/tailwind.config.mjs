@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        teal: '#0A8F8F',
+        teal: '#2b8fe0',
         orange: '#F57A1F',
+        purple: '#7a2fd0',
         dark: 'rgb(var(--color-dark) / <alpha-value>)',
         surface: 'rgb(var(--color-surface) / <alpha-value>)',
         light: 'rgb(var(--color-light) / <alpha-value>)',
